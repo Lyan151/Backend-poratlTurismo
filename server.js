@@ -18,10 +18,11 @@ app.use(cors({
 
 app.use(express.json());
  
-app.get('/', (req, res)=> res.send('api funcionando'))
+app.get('/', (req, res)=> res.send('api funcionando'));
  
-app.use('/api/users', userRoutes)
- app.use('/api/contact' , contactRoutes)
+app.use('/api/users', userRoutes);
+ app.use('/api/contact' , contactRoutes);
+ app.use('/api/auth', authRoutes);
 const PORT = process.env.PORT;
  
 sequelize.authenticate()
@@ -32,4 +33,4 @@ sequelize.authenticate()
   .then(() =>{
     console.log('banco de dados sincronizado')
     app.listen(PORT, () => console.log("SERVIDOR RODANDO NA PORTA: " + PORT))
-  }).catch(erro => console.log("Erro interno do servidor", erro))
+  }).catch(erro => console.log("Erro interno do servidor", erro));
