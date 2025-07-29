@@ -1,4 +1,4 @@
-const bcrypt = require(bcryptjs);
+const bcryptjs = require('bcryptjs');
 const User = require('../models/users');
 
 exports.login = async(req, res) => {
@@ -11,7 +11,7 @@ exports.login = async(req, res) => {
 
         if(!email || !password) return res.status(404).json({message: 'Usuario não encontrado'})
 
-        const passwordValid = await bcrypt.compare(password, user.password)
+        const passwordValid = await bcryptjs.compare(password, user.password)
         
         if(!passwordValid) return res.status(400).json({message: 'email ou senha estão incorretos'})
 
