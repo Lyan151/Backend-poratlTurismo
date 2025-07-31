@@ -5,7 +5,7 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../config/db');
  
 // Define o modelo de Usuário (User)
-const Contact = sequelize.define('Contact', {
+const Contact = sequelize.define('contact', {
   // Campo ID: chave primária, número inteiro e autoincrementável
   id: {
     type: DataTypes.INTEGER,       // Tipo número inteiro
